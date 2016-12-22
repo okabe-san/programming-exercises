@@ -112,8 +112,51 @@
 // discount(106, 17);
 
 //09
-function arr(num) {
-  let arr = [];
-  Math.floor(Math.random()*100);
-  for (let i = 0; )
-}
+// function arr(num) {
+//   let arr = [];
+//   for (let i = 0; i < num; i++) {
+//     arr.push(Math.floor(Math.random()*100));
+//   }
+//   arr.sort(sortNumber);
+//   console.log(arr);
+// }
+//
+// function sortNumber(a, b) {
+//     return a - b;
+// }
+//
+// arr(10);
+
+//10
+// function num() {
+//   let sum = 0;
+//   let temp = Math.floor((Math.random() * 9999) + 1000);
+//   console.log(temp);
+//   while (temp) {
+//     sum += temp % 10;
+//     temp = Math.floor(temp / 10);
+//   }
+//   console.log(sum);
+// }
+//
+// num();
+
+//11
+// function num() {
+//   let result = [];
+//   let num = Math.floor((Math.random() * 9999) + 1000);
+//   console.log(num);
+//   let arr = num.toString().split('').map(Number);
+//   while(arr.length > 0) {
+//     let temp = arr.reduce((a, b) => {
+//       return a + b;
+//     });
+//     result.push(temp);
+//     arr.shift();
+//   }
+//   console.log(result);
+// }
+//
+// num();
+
+//12
