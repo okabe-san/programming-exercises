@@ -160,3 +160,45 @@
 // num();
 
 //12
+function num() {
+  let randomNum = [];
+  for (let i = 0; i < 2; i++) {
+    randomNum.push(Math.floor(Math.random() * 100));
+  }
+  randomNum.sort(sortNumber);
+  console.log(randomNum);
+  let arr = numbers(randomNum[0]);
+  let result = check(arr, randomNum[1]);
+  if (randomNum[0] === 0 || randomNum[0] === 1 || randomNum[0] === randomNum[1] || result[0] === undefined) {
+    console.log('false');
+  } else {
+    console.log(result[0]);
+  }
+}
+
+function sortNumber(a, b) {
+    return a - b;
+}
+
+function numbers(temp) {
+  let tempArr = [];
+  for (let i = 2; i <= temp; i++) {
+    if (temp % i === 0)
+    {
+      tempArr.push(i);
+    }
+  }
+  return tempArr;
+}
+
+function check(arr, num) {
+  let result = [];
+  arr.forEach((ele) => {
+    if (num % ele === 0) {
+      result.push(ele);
+    }
+  });
+  return result;
+}
+
+num();
