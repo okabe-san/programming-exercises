@@ -14,7 +14,7 @@
 10. Generate a random number from 1000 to 9999 and output the sum of its digits. For example, if the number is 1049, then the output should be 14.
 11. Generate a random number from 1000 to 9999 and output the sum of its digits, repeatedly, dropping the left-most digit after each iteration, until there is only one digit only. For example, if the number is 1049, then the output should be 14, 13, 13, 9.
 12. Generate two random integers from 0 to 100 and output the smallest number such that each shares a least common denominator (aside for 1). For example, 18 and 6 should return ３, while 9 and 4 should return False. Return False if the two numbers are equal.
-1. Write a function that takes two random integers as arguments and returns the least common multiple.
+13. Write a function that takes two random integers as arguments and returns the least common multiple.
 1. Write a program that calculates and shows the value of (x to the nth power). Let both integers fall within the range of 2 through 20.
 1. **Triangle**: Write a function that takes a single number as an input and returns that many lines. On the first line there is one '#' character. On the second there are two. And so on.
 This will create a nice triangle.

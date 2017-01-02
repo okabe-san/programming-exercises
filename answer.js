@@ -160,35 +160,93 @@
 // num();
 
 //12
-function num() {
-  let randomNum = [];
-  for (let i = 0; i < 2; i++) {
-    randomNum.push(Math.floor(Math.random() * 100));
-  }
-  randomNum.sort(sortNumber);
-  console.log(randomNum);
-  let arr = numbers(randomNum[0]);
-  let result = check(arr, randomNum[1]);
-  if (randomNum[0] === 0 || randomNum[0] === 1 || randomNum[0] === randomNum[1] || result[0] === undefined) {
+// function num() {
+//   let randomNum = [];
+//   for (let i = 0; i < 2; i++) {
+//     randomNum.push(Math.floor(Math.random() * 100));
+//   }
+//   randomNum.sort(sortNumber);
+//   console.log(randomNum);
+//   let arr = numbers(randomNum[0]);
+//   let result = check(arr, randomNum[1]);
+//   if (randomNum[0] === 0 || randomNum[0] === 1 || randomNum[0] === randomNum[1] || result[0] === undefined) {
+//     console.log('false');
+//   } else {
+//     console.log(result[0]);
+//   }
+// }
+//
+// function sortNumber(a, b) {
+//     return a - b;
+// }
+//
+// function numbers(temp) {
+//   let tempArr = [];
+//   for (let i = 2; i <= temp; i++) {
+//     if (temp % i === 0)
+//     {
+//       tempArr.push(i);
+//     }
+//   }
+//   return tempArr;
+// }
+//
+// function check(arr, num) {
+//   let result = [];
+//   arr.forEach((ele) => {
+//     if (num % ele === 0) {
+//       result.push(ele);
+//     }
+//   });
+//   return result;
+// }
+//
+// num();
+
+//13
+function sameNum() {
+  let randomArr = randomNum();
+  randomArr.sort(sortNum);
+  console.log('Random Numbers', randomArr);
+  let divideArr = possibleNum(randomArr[0]);
+  let result = check(divideArr, randomArr[1]);
+  if (randomArr[0] === 0) {
     console.log('false');
+  } else if ( randomArr[0] === 1 || randomArr[0] === randomArr[1]) {
+    console.log(randomArr[1]);
+  }
+  else if (result[0] === undefined) {
+    console.log(randomArr[0] * randomArr[1]);
   } else {
-    console.log(result[0]);
+    let newResult = newNum(randomArr[0], result);
+    console.log('Divider', newResult);
+    let multiply = mult(newResult);
+    let result2 = multiply * (randomArr[0] / multiply) * (randomArr[1] / multiply);
+    console.log(result2);
   }
 }
 
-function sortNumber(a, b) {
+function randomNum() {
+  let result = [];
+  for (let i = 0; i < 2; i++) {
+    result.push(Math.floor(Math.random() * 100));
+  }
+  return result;
+}
+
+function sortNum(a, b) {
     return a - b;
 }
 
-function numbers(temp) {
-  let tempArr = [];
-  for (let i = 2; i <= temp; i++) {
-    if (temp % i === 0)
+function possibleNum(num) {
+  let result = [];
+  for (let i = 2; i <= num; i++) {
+    if (num % i === 0)
     {
-      tempArr.push(i);
+      result.push(i);
     }
   }
-  return tempArr;
+  return result;
 }
 
 function check(arr, num) {
@@ -201,4 +259,24 @@ function check(arr, num) {
   return result;
 }
 
-num();
+function newNum(num, arr) {
+  let result = [];
+  let temp = num;
+  arr.forEach((ele) => {
+    if (temp / ele % 1 === 0) {
+      temp = temp / ele;
+      result.push(ele);
+    }
+  });
+  return result;
+}
+
+function mult(arr) {
+  let result = 1;
+  arr.forEach((ele) => {
+    result = result * ele;
+  });
+  return result;
+}
+
+sameNum();
